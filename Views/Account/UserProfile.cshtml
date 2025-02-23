@@ -1,0 +1,176 @@
+﻿@model ContaBle.Models.UserProfileViewModel
+
+@{
+    ViewData["Title"] = "Perfil de Usuario";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Información del Usuario</h3>
+                    <p class="card-text"><strong>Email:</strong> @Model.Email</p>
+                    <p class="card-text"><strong>Nombre de Usuario:</strong> @Model.NormalizedUserName</p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Crear Registro de Persona</h3>
+                    <form method="post" asp-action="CreatePerson">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="FirstName">Nombre</label>
+                                <input type="text" class="form-control" id="FirstName" name="FirstName" required />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label for="LastName">Apellido</label>
+                                <input type="text" class="form-control" id="LastName" name="LastName" required />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="Email">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="Email" name="Email" required />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label for="PhoneNumber">Teléfono</label>
+                                <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" required />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="Dni">DNI</label>
+                                <input type="text" class="form-control" id="Dni" name="Dni" required />
+                                <span asp-validation-for="Dni" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label for="FechaNacimiento">Fecha de Nacimiento</label>
+                                <input type="date" class="form-control" id="FechaNacimiento" name="FechaNacimiento" required />
+                                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Nota">Nota</label>
+                            <textarea class="form-control" id="Nota" name="Nota"></textarea>
+                            <span asp-validation-for="Nota" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="NumeroSocio">Número de Socio</label>
+                            <input type="text" class="form-control" id="NumeroSocio" name="NumeroSocio" required />
+                            <span asp-validation-for="NumeroSocio" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="CuotaSocio">Cuota de Socio</label>
+                            <input type="number" class="form-control" id="CuotaSocio" name="CuotaSocio" step="0.01" />
+                            <span asp-validation-for="CuotaSocio" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="CuotaFester">Cuota de Fester</label>
+                            <input type="number" class="form-control" id="CuotaFester" name="CuotaFester" step="0.01" />
+                            <span asp-validation-for="CuotaFester" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Crear</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Buscador.</h3>
+                    <form method="get" asp-action="UserProfile">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" name="searchTerm" placeholder="Buscar por nombre, Dni, email" value="@ViewData["searchTerm"]" />
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Personas Registradas</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered align-middle">
+                            <thead class="table-dark text-center">
+                                <tr>
+                                    <th><a asp-action="UserProfile" asp-route-sortOrder="FirstName" asp-route-searchTerm="@ViewData["searchTerm"]">Nombre</a></th>
+                                    <th><a asp-action="UserProfile" asp-route-sortOrder="LastName" asp-route-searchTerm="@ViewData["searchTerm"]">Apellido</a></th>
+                                    @* <th><a asp-action="UserProfile" asp-route-sortOrder="Email" asp-route-searchTerm="@ViewData["searchTerm"]">Correo</a></th> *@
+                                    <th><a asp-action="UserProfile" asp-route-sortOrder="PhoneNumber" asp-route-searchTerm="@ViewData["searchTerm"]">Teléfono</a></th>
+                                    <th><a asp-action="UserProfile" asp-route-sortOrder="Dni" asp-route-searchTerm="@ViewData["searchTerm"]">DNI</a></th>
+                                    <th><a asp-action="UserProfile" asp-route-sortOrder="CuotaSocio" asp-route-searchTerm="@ViewData["searchTerm"]">Cuota de Socio</a></th>
+                                    <th><a asp-action="UserProfile" asp-route-sortOrder="CuotaFester" asp-route-searchTerm="@ViewData["searchTerm"]">Cuota de Fester</a></th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var person in Model.Persons)
+                                {
+                                    <tr>
+                                        <td><a asp-action="PersonDetails" asp-route-id="@person.Id" class="text-decoration-none"><strong>@person.FirstName</strong></a></td>
+                                        <td>@person.LastName</td>
+                                        @* <td>@person.Email</td> *@
+                                        <td>@person.PhoneNumber</td>
+                                        <td>@person.Dni</td>
+                                        <td>@person.CuotaSocio.ToString("C")</td>
+                                        <td>@person.CuotaFester.ToString("C")</td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                <a asp-action="EditPerson" asp-route-id="@person.Id" class="btn btn-sm btn-warning me-1">
+                                                    <i class="bi bi-pencil">Editar</i>
+                                                </a>
+                                                <form method="post" asp-action="DeletePerson" asp-route-id="@person.Id" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta persona?');">
+                                                    <button type="submit" class="btn btn-sm btn-danger ms-2">Eliminar</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mt-4">
+                    @if (Model.PageNumber > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" asp-action="UserProfile" asp-route-pageNumber="@(Model.PageNumber - 1)" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@ViewData["searchTerm"]">Anterior</a>
+                        </li>
+                    }
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                            <a class="page-link" asp-action="UserProfile" asp-route-pageNumber="@i" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@ViewData["searchTerm"]">@i</a>
+                        </li>
+                    }
+                    @if (Model.PageNumber < Model.TotalPages)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" asp-action="UserProfile" asp-route-pageNumber="@(Model.PageNumber + 1)" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@ViewData["searchTerm"]">Siguiente</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var searchInput = document.querySelector('input[name="searchTerm"]');
+        if (searchInput) {
+            searchInput.value = "";
+        }
+    });
+</script>

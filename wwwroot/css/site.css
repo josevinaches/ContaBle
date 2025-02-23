@@ -1,0 +1,67 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+
+/* Fondo de pergamino con ajuste total */
+.carta-antigua {
+    background: url('/logos/pergamino.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 40px;
+    border: 12px solid #b08d57;
+    border-radius: 15px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+    font-family: 'Cormorant Garamond', serif;
+    color: #4b2c20;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* Responsivo: Ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+    .carta-antigua {
+        padding: 15px !important;
+        font-size: 1rem !important;
+        background-size: contain !important;
+    }
+
+    .titulo-historia {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+    }
+
+    .logos-historia img {
+        max-height: 60px !important;
+    }
+}
+

@@ -1,0 +1,73 @@
+﻿@model ContaBle.Models.EditPersonViewModel
+
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Editar Persona</h3>
+                    <form method="post" asp-action="EditPerson">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label for="FirstName">Nombre</label>
+                            <input type="text" class="form-control" asp-for="FirstName" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="LastName">Apellido</label>
+                            <input type="text" class="form-control" asp-for="LastName" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Correo Electrónico</label>
+                            <input type="email" class="form-control" asp-for="Email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="PhoneNumber">Número de Teléfono</label>
+                            <input type="text" class="form-control" asp-for="PhoneNumber" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Dni">DNI</label>
+                            <input type="text" class="form-control" asp-for="Dni" />
+                            <span asp-validation-for="Dni" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="FechaNacimiento">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" asp-for="FechaNacimiento" />
+                            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Nota">Nota</label>
+                            <textarea class="form-control" asp-for="Nota"></textarea>
+                            <span asp-validation-for="Nota" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="NumeroSocio">Número de Socio</label>
+                            <input type="text" class="form-control" asp-for="NumeroSocio" />
+                            <span asp-validation-for="NumeroSocio" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="CuotaSocio">Cuota Socio</label>
+                            <input type="text" class="form-control" asp-for="CuotaSocio" />
+                            <span asp-validation-for="CuotaSocio" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="CuotaFester">Cuota Fester</label>
+                            <input type="text" class="form-control" asp-for="CuotaFester" />
+                            <span asp-validation-for="CuotaFester" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+                        <a asp-action="UserProfile" class="btn btn-secondary mt-3">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

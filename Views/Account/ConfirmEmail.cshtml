@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Correo Electrónico Confirmado";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white text-center">
+                    <h3>@ViewData["Title"]</h3>
+                </div>
+                <div class="card-body text-center">
+                    <p class="lead">
+                        Gracias por confirmar tu correo electrónico. Ahora puedes iniciar sesión.
+                    </p>
+                    <a asp-action="Login" class="btn btn-info">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

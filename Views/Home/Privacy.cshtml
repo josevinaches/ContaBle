@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Historia";
+}
+
+<style>
+    /* Estilos generales */
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        background-color: #f4e2c7; /* Color pergamino */
+    }
+
+    /* Estilo de la tarjeta con fondo de pergamino */
+    .carta-antigua {
+        background-color: #f4e2c7; /* Color suave tipo pergamino */
+        padding: 50px;
+        border: 8px solid #b08d57; /* Borde envejecido */
+        border-radius: 10px;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+        color: #4b2c20;
+        text-align: justify;
+        font-size: 1.4rem;
+        font-style: italic;
+        max-width: 900px;
+        margin: auto;
+        line-height: 1.8;
+    }
+
+    .titulo-historia {
+        font-size: 2.8rem;
+        font-weight: bold;
+        text-align: center;
+        color: #4b2c20;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        margin-bottom: 30px;
+    }
+
+    /* Contenedor de los logos */
+    .logos-historia {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+        .logos-historia img {
+            max-height: 90px;
+            margin: 0 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="titulo-historia">@ViewData["Title"]</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card carta-antigua">
+                <div class="card-body">
+                    <!-- Sección de Logos -->
+                    <div class="logos-historia">
+                        <img src="~/logos/ayuntametVila.png" alt="Logo Ayuntamiento">
+                        <img src="~/logos/logoAso.png" alt="Logo Asociación">
+                    </div>
+
+                    <h2 class="text-center text-primary mb-3">Villajoyosa: Relato de sus Gloriosas Fiestas</h2>
+
+                    <p>
+                        En los anales del tiempo, allá donde las olas besan la dorada arena, descansa la villa de Villajoyosa, también conocida como "La Vila Joiosa".
+                        Sus orígenes se pierden en la bruma de los tiempos, cuando los romanos cruzaron sus caminos y los moros establecieron sus dominios.
+                        Fue en estas tierras, fecundas de historia y honor, donde nacieron las grandiosas fiestas que, hasta el día de hoy, resuenan como un eco inmortal de la valentía y la devoción de sus gentes.
+                    
+                        <hr />
+                    
+                        En los días de la Reconquista, cuando la espada y la fe decidían el destino de los pueblos, la comunidad cristiana de Villajoyosa alzó su estandarte y consagró sus festividades en honor a su santo protector.
+                        Las plegarias se elevaron al cielo y, con el transcurrir de los siglos, aquellas devociones se entrelazaron con la esencia misma del pueblo, nutriéndose de antiguas costumbres y del espíritu indómito de sus habitantes.
+
+                        <hr />
+                    
+                        Cada año, cuando el sol brilla con su mayor esplendor sobre el Mediterráneo, la villa se viste de gala para rendir tributo a sus ancestros.
+                        Procesiones solemnes recorren sus calles empedradas, mientras los caballeros y damas reviven con orgullo las gestas de antaño.
+                        Los clarines anuncian el inicio de los desfiles, los estandartes ondean al viento y la pólvora ilumina la noche con fuegos de artificio, cual si fueran estrellas fugaces celebrando la memoria de tiempos gloriosos.
+
+                        <hr />
+                    
+                        No es solo una festividad; es el alma misma de La Vila Joiosa, un testimonio de su linaje y de su fervor inquebrantable.
+                        Así, generación tras generación, este legado permanece imperecedero, recordando a cada hijo de esta tierra que la historia se escribe con honor, fe y unidad.
+                       
+                       Villajoyosa. Nuestro Señor, siglos de historia nos contemplan...</p>
+                 
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

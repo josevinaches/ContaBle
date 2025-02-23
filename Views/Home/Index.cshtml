@@ -1,0 +1,324 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!-- Estilos personalizados para las tarjetas -->
+<style>
+    .card-custom {
+        border: none;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-custom .card-body {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .card-custom:hover .card-body {
+            background: linear-gradient(135deg, #e9ecef, #ffffff);
+        }
+
+        .card-custom .card-title {
+            font-weight: bold;
+            color: #333;
+        }
+
+    .card-programador {
+        border: none;
+        border-radius: 1rem;
+        max-width: 220px;
+        margin: 0 auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card-programador:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-programador .card-img-top {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 1rem auto 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-programador .card-body {
+            padding: 1rem;
+        }
+
+        .card-programador .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-programador .card-text {
+            font-size: 0.9rem;
+            color: #555;
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="col">
+        <div class="card card-custom h-100">
+            <img src="~/logos/ayuntametVila.png" class="card-img-top" alt="Piratas Berberiscos" style="max-height: 60px; object-fit: contain;">
+            <div class="card-body text-center">
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron bg-primary text-white text-center rounded-lg p-5 shadow-lg">
+        <h1 class="display-4 fw-bold">Bienvenido a <span class="text-warning">ContaBle</span></h1>
+        <p class="lead">La plataforma de gestión de la Asociación de Santa Marta.</p>
+        <hr class="my-4 border-light">
+        <p class="mb-4">Administra los datos de socios, cuotas y mucho más, de manera sencilla y eficiente.</p>
+        <a class="btn btn-warning btn-lg shadow-sm px-4" href="@Url.Action("UserProfile", "Account")" role="button">
+            Ir al Perfil de Usuario
+        </a>
+    </div>
+
+    <h3 class="mt-5 text-center text-uppercase text-secondary fw-bold">Compañías</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+        <!-- Tarjeta: Piratas Berberiscos -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/piratesberberiscos.webp" class="card-img-top" alt="Piratas Berberiscos" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Piratas Berberiscos</h5>
+                    <p class="card-text mt-2">
+                        <a href="https://www.facebook.com/piratesberberiscos.lavila" target="_blank" class="text-primary">
+                            <i class="fab fa-facebook-square"></i> Facebook
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Tuaregs -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/tuares.webp" class="card-img-top" alt="Tuaregs" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Tuaregs</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Moros del Riff -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/morosriff.webp" class="card-img-top" alt="Moros del Riff" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Moros del Riff</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Negres -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/negres.webp" class="card-img-top" alt="Negres" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Negres</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Artillería del Islam -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/artislam.webp" class="card-img-top" alt="Artillería del Islam" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Artillería del Islam</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Moros de Capeta -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/moroscapeta.webp" class="card-img-top" alt="Moros de Capeta" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Moros de Capeta</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Moros Mercaders -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/morosmercaders.webp" class="card-img-top" alt="Moros Mercaders" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Moros Mercaders</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Artillería Mora -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/artmora.webp" class="card-img-top" alt="Artillería Mora" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Artillería Mora</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Moros Pak-kos -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/morospakos.webp" class="card-img-top" alt="Moros Pak-kos" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Moros Pak-kos</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Guardia Negra -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/guardnegra.webp" class="card-img-top" alt="Guardia Negra" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Guardia Negra</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Beduins -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/beduinos.webp" class="card-img-top" alt="Beduins" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Beduins</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Artillería Cristiana -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/artcristiana.webp" class="card-img-top" alt="Artillería Cristiana" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Artillería Cristiana</h5>
+                    <p class="card-text mt-2">
+                        <a href="https://www.facebook.com/artilleria.cristiana.vila" target="_blank" class="text-primary">
+                            <i class="fab fa-facebook-square"></i> Facebook
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Piratas Corsarios -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/piratescorsaris.webp" class="card-img-top" alt="Piratas Corsarios" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Piratas Corsarios</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Contrabandistas -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/contrabandistes.webp" class="card-img-top" alt="Cotrabanditas" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Contrabandistas</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Pescadors -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/pescadors.webp" class="card-img-top" alt="Pescadors" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Pescadors</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Caçadors-->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/casadors.webp" class="card-img-top" alt="Caçadors" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Caçadors</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Catalans -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/catalans.webp" class="card-img-top" alt="Catalans" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Catalans</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Llauradors -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/llauradors.webp" class="card-img-top" alt="Llauradors" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Llauradors</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Marinos -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/marinos.webp" class="card-img-top" alt="Marinos" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Marinos</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Destralers -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/destralers.webp" class="card-img-top" alt="Destralers" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Destralers</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Voluntaris -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/voluntaris.jpg" class="card-img-top" alt="Voluntaris" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Voluntaris</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Almogàvers -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/Almogavers.webp" class="card-img-top" alt="Almogàvers" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Almogàvers</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Asociacion Santa Marta. -->
+        <div class="col">
+            <div class="card card-custom h-100">
+                <img src="~/logos/LogoAso.png" class="card-img-top" alt="Asociación Santa Marta" style="max-height: 60px; object-fit: contain;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Asociación Santa Marta</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta: Programador -->
+        <div class="col">
+            <div class="card card-programador shadow-sm">
+                <img src="~/logos/programador.jpg" class="card-img-top" alt="Programador">
+                <div class="card-body text-center">
+                    <p class="card-text">Proyectos .Net</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Agregar Font Awesome para íconos (si es necesario) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
